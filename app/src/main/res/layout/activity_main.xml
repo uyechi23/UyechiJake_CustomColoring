@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/user_interface"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- Create custom SceneView Layout that extends SurfaceView -->
+        <com.example.uyechijake_customcoloring.SceneView
+            android:id="@+id/object_surface_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+        </com.example.uyechijake_customcoloring.SceneView>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:gravity="bottom"
+            android:text="@string/current_element"
+            android:textColor="@color/black"
+            android:textSize="25sp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <SeekBar
+                android:id="@+id/red_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="15sp"
+                android:max="255"
+                android:min="0"
+                android:progress="0"
+                android:progressBackgroundTint="@color/dark_red"
+                android:progressTint="@color/red"/>
+
+            <SeekBar
+                android:id="@+id/green_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="15sp"
+                android:max="255"
+                android:min="0"
+                android:progress="0"
+                android:progressBackgroundTint="@color/dark_green"
+                android:progressTint="@color/green"/>
+
+            <SeekBar
+                android:id="@+id/blue_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="15sp"
+                android:max="255"
+                android:min="0"
+                android:progress="0"
+                android:progressBackgroundTint="@color/dark_blue"
+                android:progressTint="@color/blue"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
