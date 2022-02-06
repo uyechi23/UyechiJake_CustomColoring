@@ -5,23 +5,18 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <!-- Create custom SceneView Layout that extends SurfaceView -->
     <LinearLayout
         android:id="@+id/user_interface"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <!-- Create custom SceneView Layout that extends SurfaceView -->
-        <com.example.uyechijake_customcoloring.SceneView
-            android:id="@+id/object_surface_view"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1">
 
-        </com.example.uyechijake_customcoloring.SceneView>
 
 
         <TextView
+            android:id="@+id/element_id_field"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
