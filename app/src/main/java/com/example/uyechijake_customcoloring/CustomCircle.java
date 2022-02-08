@@ -57,6 +57,9 @@ public class CustomCircle extends CustomElement {
 		return (int)(Math.PI * this.radius * this.radius);
 	}
 
+	// get color for the circle
+	public int getColor() { return this.myPaint.getColor(); }
+
 	@Override
 	public void drawHighlight(Canvas canvas) {
 		canvas.drawCircle(x, y, radius, highlightPaint);

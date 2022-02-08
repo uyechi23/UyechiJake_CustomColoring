@@ -5,15 +5,18 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <!-- Create custom SceneView Layout that extends SurfaceView -->
     <LinearLayout
         android:id="@+id/user_interface"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-
-
+        <com.example.uyechijake_customcoloring.SceneView
+            android:id="@+id/scene"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@drawable/night_sky"
+            android:layout_weight="1"/>
 
         <TextView
             android:id="@+id/element_id_field"
@@ -25,45 +28,38 @@
             android:textColor="@color/black"
             android:textSize="25sp"/>
 
-        <LinearLayout
+        <SeekBar
+            android:id="@+id/red_bar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_marginVertical="15sp"
+            android:max="255"
+            android:min="0"
+            android:progress="0"
+            android:progressBackgroundTint="@color/dark_red"
+            android:progressTint="@color/red"/>
 
-            <SeekBar
-                android:id="@+id/red_bar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="15sp"
-                android:max="255"
-                android:min="0"
-                android:progress="0"
-                android:progressBackgroundTint="@color/dark_red"
-                android:progressTint="@color/red"/>
+        <SeekBar
+            android:id="@+id/green_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="15sp"
+            android:max="255"
+            android:min="0"
+            android:progress="0"
+            android:progressBackgroundTint="@color/dark_green"
+            android:progressTint="@color/green"/>
 
-            <SeekBar
-                android:id="@+id/green_bar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="15sp"
-                android:max="255"
-                android:min="0"
-                android:progress="0"
-                android:progressBackgroundTint="@color/dark_green"
-                android:progressTint="@color/green"/>
-
-            <SeekBar
-                android:id="@+id/blue_bar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="15sp"
-                android:max="255"
-                android:min="0"
-                android:progress="0"
-                android:progressBackgroundTint="@color/dark_blue"
-                android:progressTint="@color/blue"/>
-
-        </LinearLayout>
+        <SeekBar
+            android:id="@+id/blue_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="15sp"
+            android:max="255"
+            android:min="0"
+            android:progress="0"
+            android:progressBackgroundTint="@color/dark_blue"
+            android:progressTint="@color/blue"/>
 
     </LinearLayout>
 
