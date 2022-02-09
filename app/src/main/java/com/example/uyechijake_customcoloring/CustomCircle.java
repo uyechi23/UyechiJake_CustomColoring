@@ -1,7 +1,6 @@
 package com.example.uyechijake_customcoloring;
 
 import android.graphics.Canvas;
-import android.graphics.Rect;
 
 /**
  * <!-- class CustomCircle -->
@@ -17,9 +16,9 @@ import android.graphics.Rect;
 public class CustomCircle extends CustomElement {
 
 	/** these variables define the location and radius of a circle */
-	private int x;
-	private int y;
-	private int radius;
+	private final int x;
+	private final int y;
+	private final int radius;
 	
 	/** the circle's dimensions must be defined at construction */
 	public CustomCircle(String name, int color, int x, int y, int radius)

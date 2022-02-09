@@ -9,7 +9,17 @@
         android:id="@+id/user_interface"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="#FF333333">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:gravity="top"
+            android:text="@string/Title"
+            android:textColor="@color/white"
+            android:textSize="20sp"/>
 
         <com.example.uyechijake_customcoloring.SceneView
             android:id="@+id/scene"
@@ -25,8 +35,9 @@
             android:layout_gravity="bottom"
             android:gravity="bottom"
             android:text="@string/current_element"
-            android:textColor="@color/black"
-            android:textSize="25sp"/>
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            android:background="@color/black"/>
 
         <SeekBar
             android:id="@+id/red_bar"
@@ -37,7 +48,8 @@
             android:min="0"
             android:progress="0"
             android:progressBackgroundTint="@color/dark_red"
-            android:progressTint="@color/red"/>
+            android:progressTint="@color/red"
+            android:background="#FF333333"/>
 
         <SeekBar
             android:id="@+id/green_bar"
@@ -48,7 +60,8 @@
             android:min="0"
             android:progress="0"
             android:progressBackgroundTint="@color/dark_green"
-            android:progressTint="@color/green"/>
+            android:progressTint="@color/green"
+            android:background="#FF333333"/>
 
         <SeekBar
             android:id="@+id/blue_bar"
@@ -59,7 +72,8 @@
             android:min="0"
             android:progress="0"
             android:progressBackgroundTint="@color/dark_blue"
-            android:progressTint="@color/blue"/>
+            android:progressTint="@color/blue"
+            android:background="#FF333333"/>
 
     </LinearLayout>
 

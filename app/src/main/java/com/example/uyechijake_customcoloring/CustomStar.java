@@ -2,9 +2,7 @@ package com.example.uyechijake_customcoloring;
 
 import android.graphics.Canvas;
 import android.graphics.Path;
-import android.graphics.Rect;
 import android.graphics.RectF;
-import android.util.Log;
 
 /**
  * This class defines a custom drawing element that is a star.
@@ -17,11 +15,11 @@ import android.util.Log;
 public class CustomStar extends CustomElement{
 
     // define the properties of the star
-    private int x;
-    private int y;
-    private int width;
-    private int height;
-    private Path shape = new Path();
+    private final int x;
+    private final int y;
+    private final int width;
+    private final int height;
+    private final Path shape = new Path();
 
     // constructor for Star object
     public CustomStar(String name, int color, int x, int y, int width, int height){
@@ -104,9 +102,11 @@ public class CustomStar extends CustomElement{
 
     @Override
     public void drawHighlight(Canvas canvas) {
+        // update shape with the given outline offset (5 is enough to make the outline show around star)
         updateShape(5);
         canvas.drawPath(shape, outlinePaint);
 
+        // update shape with the highlight color
         updateShape(0);
         canvas.drawPath(shape, highlightPaint);
     }

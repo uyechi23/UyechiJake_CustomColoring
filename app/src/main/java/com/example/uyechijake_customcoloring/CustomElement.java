@@ -119,4 +119,5 @@ public abstract class CustomElement {
 	 */
 	public abstract void drawHighlight(Canvas canvas);
 
+
 }// class CustomElement

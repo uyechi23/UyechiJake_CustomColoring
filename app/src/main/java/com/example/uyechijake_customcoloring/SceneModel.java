@@ -23,20 +23,17 @@ public class SceneModel {
     public SeekBar blue_bar;
 
     // initialize SceneModel with the TextView that will be modified
-    public SceneModel(TextView initText){
+    public SceneModel(TextView initText, SeekBar red, SeekBar green, SeekBar blue){
         elementArray = new ArrayList<>();
         this.textView = initText;
+        this.red_bar = red;
+        this.green_bar = green;
+        this.blue_bar = blue;
     }
 
     // set TextView
     public void setTextView(TextView text) {this.textView = text;}
 
-    // get TextView
-    public TextView getTextView() {return this.textView;}
-
     // add CustomElement
     public void addElement(CustomElement e){elementArray.add(e);}
-
-    // remove CustomElement at an index
-    public void removeElement(int index){elementArray.remove(index);}
 }

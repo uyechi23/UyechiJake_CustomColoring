@@ -32,13 +32,15 @@ CONTROLLER CLASS -
  */
 public class SceneController implements View.OnTouchListener, SeekBar.OnSeekBarChangeListener{
 
-    private SceneView scene = null;
-    private SceneModel sceneModel = null;
-    private TextView text = null;
-    private SeekBar red_bar = null;
-    private SeekBar green_bar = null;
-    private SeekBar blue_bar = null;
+    // instance variables
+    private final SceneView scene;
+    private final SceneModel sceneModel;
+    private final TextView text;
+    private final SeekBar red_bar;
+    private final SeekBar green_bar;
+    private final SeekBar blue_bar;
 
+    // SceneController constructor
     public SceneController(SceneView initScene,
                            SceneModel initModel,
                            TextView initText,
@@ -53,6 +55,8 @@ public class SceneController implements View.OnTouchListener, SeekBar.OnSeekBarC
         this.blue_bar = blue_bar;
     }
 
+    // when a touch is detected on the SceneView...
+    @SuppressLint({"SetTextI18n", "ClickableViewAccessibility"})
     @Override
     public boolean onTouch(View view, MotionEvent motionEvent) {
         // invalidate
@@ -64,16 +68,31 @@ public class SceneController implements View.OnTouchListener, SeekBar.OnSeekBarC
 
         // sweep through array of CustomElements and find the most recently tapped item
         // also set the progress of the seekBars equal to the values of R, G, and B
+        // note that if elements overlap, this will cause the most recent addition to the
+        // ArrayList to be selected
+        boolean found = false;
         for(CustomElement e : sceneModel.elementArray){
             if(e.containsPoint(x, y)){
                 text.setText(String.format("Current Element: %s",e.getName()));
-                Log.d("Size", "" + e.getSize());
                 int[] rgb = hexToRGB(e.getColor());
                 red_bar.setProgress(rgb[0]);
                 green_bar.setProgress(rgb[1]);
                 blue_bar.setProgress(rgb[2]);
+                found = true;
             }
         }
+
+        // if there was no element found in the previous for-each loop,
+        // set the text back to default and return SeekBars to 0 progress
+        if(!found){
+            text.setText("Select an element...");
+            red_bar.setProgress(0);
+            green_bar.setProgress(0);
+            blue_bar.setProgress(0);
+        }
+
+        // log the click position to the Debug Logcat
+        Log.d("Position", String.format("x:%d, y:%d", x, y));
 
         return false;
     }

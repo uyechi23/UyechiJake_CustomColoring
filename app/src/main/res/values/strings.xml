@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">UyechiJake_CustomColoring</string>
-    <string name="current_element">Current Element</string>
+    <string name="current_element">Select an element to get started…</string>
+    <string name="Title">Southern Sky [January 30, 2019, 3–6 AM] - The Moon, Jupiter, and Mars near constellation Libra</string>
 </resources>
